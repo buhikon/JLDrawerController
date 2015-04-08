@@ -33,7 +33,15 @@ self.drawerController = [[JLDrawerController alloc] initWithParentViewController
 * Allow Swipe to Close : if NO, users cannot close the child view controller by swipe.
 
 
-Also, you can manually open or close the child view controller by calling `open` or `close`.
+Also, you can manually open or close the child view controller by calling below methods
+```
+- (void)open;
+- (void)openAnimated:(BOOL)animated;
+- (void)openAnimated:(BOOL)animated completion:(void(^)(void))completion;
+- (void)close;
+- (void)closeAnimated:(BOOL)animated;
+- (void)closeAnimated:(BOOL)animated completion:(void(^)(void))completion;
+```
 
 
 ## Demo
