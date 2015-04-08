@@ -49,6 +49,11 @@ Also, you can manually open or close the child view controller by calling below 
 [![](https://raw.github.com/buhikon/JLDrawerController/master/demo.gif)](https://raw.github.com/buhikon/JLDrawerController/master/demo.gif)
 
 
+## Issues
+
+Currently, it is NOT support rotation. You should not change the device orientation.
+
+
 ## License
 
 Licensed under the MIT license. You can use the code in your commercial and non-commercial projects.
