@@ -1,2 +1,46 @@
 # JLDrawerController
-open or close UIViewController by UIPanGestureRecognizer
+
+## Install
+
+Copy below files into your project. 
+```
+JLDrawerController.h
+JLDrawerController.m
+```
+
+## Sample Project
+
+You can find a sample project in the repository.
+
+
+## Usage
+
+1. import header file `#import "JLDrawerController.h"`
+2. set property `@property (strong, nonatomic) JLDrawerController *drawerController;`
+3. create instance like below
+```
+self.drawerController = [[JLDrawerController alloc] initWithParentViewController:self
+                                                             childViewController:vc
+                                                                      swipeView:self.topSwipeView
+                                                                revealDirection:JLDrawerRevealDirectionTopToBottom
+                                                              allowSwipeToClose:YES];
+```
+
+* Parent View Controller : base view controller
+* Child View Controller  : a view controller which will appear or disappear when user swipe.
+* Swipe View            : a view which is on base view controller to detect pan gesture.
+* Reveal Direction     : Bottom to Top, Top to Bottom, Left to Right, Right to Left
+* Allow Swipe to Close : if NO, users cannot close the child view controller by swipe.
+
+
+Also, you can manually open or close the child view controller by calling `open` or `close`.
+
+
+## Demo
+
+[![](https://raw.github.com/buhikon/JLDrawerController/master/demo.gif)](https://raw.github.com/buhikon/JLDrawerController/master/demo.gif)
+
+
+## License
+
+Licensed under the MIT license. You can use the code in your commercial and non-commercial projects.
