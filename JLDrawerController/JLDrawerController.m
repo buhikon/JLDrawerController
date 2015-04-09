@@ -1,7 +1,7 @@
 //
 //  JLDrawerController.m
 //
-//  Version 1.0.0
+//  Version 1.0.1
 //
 //  Created by Joey L. on 4/8/15.
 //  Copyright 2015 Joey L. All rights reserved.
@@ -74,6 +74,8 @@
     }
     
     // add childViewController
+    if(![[self.parentViewController class] isSubclassOfClass:[UINavigationController class]] &&
+       ![[self.parentViewController class] isSubclassOfClass:[UITabBarController class]])
     {
         BOOL exist = NO;
         for(UIViewController *vc in self.parentViewController.childViewControllers) {
