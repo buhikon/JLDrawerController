@@ -1,7 +1,7 @@
 //
 //  JLDrawerController.m
 //
-//  Version 1.0.1
+//  Version 1.0.2
 //
 //  Created by Joey L. on 4/8/15.
 //  Copyright 2015 Joey L. All rights reserved.
@@ -213,6 +213,9 @@
                      completion:^(BOOL finished) {
                          if(completion) {
                              completion();
+                         }
+                         if(self.eventHandler) {
+                             self.eventHandler(showState ? JLDrawerEventViewDidAppear : JLDrawerEventViewDidDisappear);
                          }
                      }];
 }

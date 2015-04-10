@@ -1,7 +1,7 @@
 //
 //  JLDrawerController.h
 //
-//  Version 1.0.1
+//  Version 1.0.2
 //
 //  Created by Joey L. on 4/8/15.
 //  Copyright 2015 Joey L. All rights reserved.
@@ -19,6 +19,13 @@ typedef enum {
     JLDrawerRevealDirectionRightToLeft
 } JLDrawerRevealDirection;
 
+typedef enum {
+    JLDrawerEventViewDidAppear,
+    JLDrawerEventViewDidDisappear
+} JLDrawerEvent;
+
+typedef void(^JLDrawerEventHandler)(JLDrawerEvent event);
+
 
 @interface JLDrawerController : NSObject
 
@@ -27,6 +34,7 @@ typedef enum {
 @property (weak, nonatomic) UIView *swipeView;
 @property (assign, nonatomic) JLDrawerRevealDirection revealDirection;
 @property (assign, nonatomic) BOOL allowSwipeToClose;
+@property (copy, nonatomic) JLDrawerEventHandler eventHandler;
 
 - (instancetype)initWithParentViewController:(UIViewController *)parentViewController
                          childViewController:(UIViewController *)childViewController

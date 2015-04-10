@@ -1,4 +1,4 @@
-# JLDrawerController
+# JLDrawerController v1.0.2
 
 ## Install
 
@@ -41,6 +41,23 @@ Also, you can manually open or close the child view controller by calling below 
 - (void)close;
 - (void)closeAnimated:(BOOL)animated;
 - (void)closeAnimated:(BOOL)animated completion:(void(^)(void))completion;
+```
+
+
+It is possible to receive the event about the child view controller changes.
+```
+self.myDrawerController.eventHandler = ^(JLDrawerEvent event) {
+switch (event) {
+    case JLDrawerEventViewDidAppear:
+        NSLog(@"TOP: JLDrawerEventViewDidAppear");
+        break;
+    case JLDrawerEventViewDidDisappear:
+        NSLog(@"TOP: JLDrawerEventViewDidDisappear");
+        break;
+    default:
+        break;
+    }
+};
 ```
 
 

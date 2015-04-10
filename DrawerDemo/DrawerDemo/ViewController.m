@@ -41,6 +41,18 @@
                                                                                   swipeView:self.topSwipeView
                                                                             revealDirection:JLDrawerRevealDirectionTopToBottom
                                                                           allowSwipeToClose:YES];
+        self.topDrawerController.eventHandler = ^(JLDrawerEvent event) {
+            switch (event) {
+                case JLDrawerEventViewDidAppear:
+                    NSLog(@"TOP: JLDrawerEventViewDidAppear");
+                    break;
+                case JLDrawerEventViewDidDisappear:
+                    NSLog(@"TOP: JLDrawerEventViewDidDisappear");
+                    break;
+                default:
+                    break;
+            }
+        };
     }
     {
         ChildViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ChildViewController"];
